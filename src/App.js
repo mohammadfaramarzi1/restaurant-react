@@ -18,10 +18,16 @@ function App() {
   console.log(categories);
 
   return (
-    <div>
-      <Categories categories={categories} />
-      <Menu menus={menus} />
-    </div>
+    <main>
+      <section className="menu section">
+        <div className="title">
+          <h2>Our Menu</h2>
+          <div className="underline"></div>
+        </div>
+        <Categories categories={categories} />
+        <Menu menus={menus} />
+      </section>
+    </main>
   );
 }
 
