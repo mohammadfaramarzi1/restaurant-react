@@ -8,6 +8,7 @@ const getMainCategories = (array) => {
 };
 
 const filterProducts = (products, category) => {
+  if (category === "all") return products;
   const filteredProducts = products.filter(
     (product) => product.category === category
   );

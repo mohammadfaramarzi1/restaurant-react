@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import menu from "./data";
 
 import "./App.css";
-import { getMainCategories } from "./utils/utlis";
+import { filterProducts, getMainCategories } from "./utils/utlis";
 import Categories from "./Components/Categories";
 import Menu from "./Components/Menu";
 
@@ -15,6 +15,12 @@ function App() {
     ...getMainCategories(menus),
   ]);
   const [mainCategory, setMainCategory] = useState("all");
+
+  useEffect(() => {
+    const filteredProducts = filterProducts(menu, mainCategory);
+    setMenus(filteredProducts);
+    console.log(filteredProducts);
+  }, [mainCategory]);
 
   return (
     <main>
