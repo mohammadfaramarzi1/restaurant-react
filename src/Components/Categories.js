@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Categories = () => {
+const Categories = ({ categories }) => {
   return (
     <div className="btn-container">
       <button
@@ -10,6 +10,13 @@ const Categories = () => {
       >
         All
       </button>
+      {categories.forEach(
+        (category) => (
+          <button type="button" className="filter-btn">
+            {category}
+          </button>
+        )
+      )}
     </div>
   );
 };
