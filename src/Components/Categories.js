@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const Categories = () => {
-
   return (
     <div className="btn-container">
       <button
@@ -11,7 +10,6 @@ const Categories = () => {
       >
         All
       </button>
-      );
     </div>
   );
 };
