@@ -1,22 +1,14 @@
 import React, { useState } from "react";
 
 const Categories = ({ categories }) => {
+  console.log("categories", categories);
   return (
     <div className="btn-container">
-      <button
-        type="button"
-        // highlight class  for highlight main category
-        className="filter-btn"
-      >
-        All
-      </button>
-      {categories.forEach(
-        (category) => (
-          <button type="button" className="filter-btn">
-            {category}
-          </button>
-        )
-      )}
+      {categories.map((category, index) => (
+        <button type="button" className="filter-btn" key={index}>
+          {category}
+        </button>
+      ))}
     </div>
   );
 };
