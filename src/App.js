@@ -14,8 +14,7 @@ function App() {
     "all",
     ...getMainCategories(menus),
   ]);
-
-  console.log(categories);
+  const [mainCategory, setMainCategory] = useState("all");
 
   return (
     <main>
@@ -24,7 +23,11 @@ function App() {
           <h2>Our Menu</h2>
           <div className="underline"></div>
         </div>
-        <Categories categories={categories} />
+        <Categories
+          categories={categories}
+          mainCategory={mainCategory}
+          setMainCategory={setMainCategory}
+        />
         <Menu menus={menus} />
       </section>
     </main>
